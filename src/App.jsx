@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { theme } from './config/theme/main';
 import { store } from './store';
 import { MainRouter } from './routes';
+import { MainLayout } from './config/layout/main';
 
 function App() {
     return (
@@ -12,7 +13,9 @@ function App() {
             <Provider store={store}>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
-                    <MainRouter />
+                    <MainLayout>
+                        <MainRouter />
+                    </MainLayout>
                 </ThemeProvider>
             </Provider>
         </React.Fragment>
