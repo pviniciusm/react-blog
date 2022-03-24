@@ -1,11 +1,13 @@
 import { Button, Grid, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 
-export const PostPage = () => {
-    const { id } = useParams();
-    const post = useSelector((state) => state.post);
+export const Post = () => {
+    const post = {
+        id: 1,
+        title: 'Meu post',
+        content: 'Este é o meu primeiro post usando React com Redux Toolkit',
+        date: new Date().toDateString(),
+    };
     const [disabled, setDisabled] = useState(true);
 
     return (
