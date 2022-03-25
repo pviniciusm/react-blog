@@ -1,9 +1,11 @@
 import { Button } from '@mui/material';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { selectPosts } from '../../store/modules/posts/slice';
 
 export const PostsTable = () => {
-    const posts = [];
+    const posts = useSelector(selectPosts);
 
     return (
         <table cellSpacing={'15px'}>

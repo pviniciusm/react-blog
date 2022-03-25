@@ -1,8 +1,16 @@
 import { Grid } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { PostsTable } from '../../components/PostsTable';
+import { fetchPosts } from '../../store/modules/posts/slice';
 
 export const Home = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchPosts());
+    }, []);
+
     return (
         <React.Fragment>
             <Grid container spacing={3} direction={'column'}>
